@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'img/fav/fav.ico' %}" type="image">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <title>
+    <!-- Блок title -->
+    Анфиса для друзей. Каталог мороженого
+    <!-- Конец блока title -->
+  </title>
+</head>
+<body>
+  {% include "includes/header.html" %}
+  <main class="pt-5 my-5">
+    <div class="container">
+    <!-- Блок content -->
+    <h1 class="pb-2 mb-0">Каталог мороженого</h1>
+    <div class="row">
+    <!-- Начинается перебор мороженого  в цикле -->
+        <!-- Карточка товара 0 -->
+        <div class="col-6 col-md-4 my-1">
+          <div class="card">
+            <!-- Картинку берём из статики -->
+            <img 
+              class="img-fluid card-img-top" 
+              height="400" width="300"
+              src="{% static 'img/image-holder.png' %}"
+            >
+            <div class="card-body">           
+              <h5 class="card-title">Классический пломбир</h5>
+              <p class="card-text">
+                <!-- Описание обрезано до первых 10ти слов -->
+                Настоящее мороженое, для истинных ценителей вкуса. Если на столе появляется ...
+              </p>
+              <!-- Ссылка на товар 0 -->
+              <a class="mt-3 regular-link" href="{% url 'ice_cream:ice_cream_detail' pk=0 %}">
+                Подробнее -->           
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Конец карточки товара 0 -->
+        <!-- Карточка товара 1 -->
+        <div class="col-6 col-md-4 my-1">
+          <div class="card">                  
+            <img 
+              class="img-fluid card-img-top" 
+              height="400" width="300"
+              src="{% static 'img/image-holder.png' %}"
+            >
+            <div class="card-body">           
+              <h5 class="card-title">Мороженое с кузнечиками</h5>
+              <p class="card-text">
+                <!-- Описание обрезано до первых 10ти слов -->
+                В колумбийском стиле: мороженое с добавлением настоящих карамелизованных кузнечиков.
+              </p>
+              <!-- Ссылка на товар 1 -->
+              <a class="mt-3 regular-link" href="{% url 'ice_cream:ice_cream_detail' pk=1 %}">
+                Подробнее -->           
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Конец карточки товара 1 -->
+        <!-- Карточка товара 2 -->
+        <div class="col-6 col-md-4 my-1">
+          <div class="card">                  
+            <img 
+              class="img-fluid card-img-top" 
+              height="400" width="300"
+              src="{% static 'img/image-holder.png' %}"
+            >
+            <div class="card-body">           
+              <h5 class="card-title">Мороженое со вкусом сыра чеддер</h5>
+              <p class="card-text">
+                <!-- Описание обрезано до первых 10ти слов -->
+                Вкус настоящего сыра в вафельном стаканчике.
+              </p>
+              <!-- Ссылка на товар 2 -->
+              <a class="mt-3 regular-link" href="{% url 'ice_cream:ice_cream_detail' pk=2 %}">
+                Подробнее -->           
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Конец карточки товара 2 -->
+      <!-- Конец цикла  -->
+    </div>
+  </main>
+  {% include "includes/footer.html" %}
+</body>
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</html>
