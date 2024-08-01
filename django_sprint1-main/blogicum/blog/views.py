@@ -46,18 +46,17 @@ posts = [
 
 def index(request):
     template = 'blog/index.html'
-    context = {'index': posts}
+    context = {'index': posts[::-1]}
     return render(request, template, context)
 
 
-def posts_detail(request, pk):
+def post_detail(request, id):
     # return HttpResponse(f'Публикация {pk}')
     template = 'blog/detail.html'
-    context = {'post': posts[pk]}
+    context = {'post': posts[id]}
     return render(request, template, context)
 
-def posts_category(request, category):
+def category_posts(request, category_slug):
     template = 'blog/category.html'
-    category_posts = [post for post in posts if post['category'] == category]
-    context = {'category': category_posts}  
+    context = {'category_slug': category_slug}
     return render(request, template, context)

@@ -13,10 +13,10 @@
                 <p>{{ post.date }} </p>
               </li>
                 <li>
-                  Категория:<a href="{% url 'blog:posts_category' post.category %}"> {{ post.category }}</a> 
+                  Категория:<a href="{% url 'blog:category_posts' post.category %}"> {{ post.category }}</a> 
                 </li>                  
                     <p>{{ post.text|truncatewords:10 }} </p>
-                <a href="{% url 'blog:posts_detail' post.id %}">
+                <a href="{% url 'blog:post_detail' post.id %}">
                 Читать полный текст
                 </a>  
               </li> 
