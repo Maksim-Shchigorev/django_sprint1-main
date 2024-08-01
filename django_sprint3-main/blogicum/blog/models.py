@@ -50,10 +50,15 @@ class Post(PublishedModel):
         'Опубликовано', default=True,
         help_text='Снимите галочку, чтобы скрыть публикацию.')
     created_at = models.DateTimeField('Добавлено', auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL,
-                                 null=True, blank=False,
-                                 related_name='post', verbose_name='Категория',
-                                 help_text='Укажите категорию для публикации.')
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name='post', verbose_name='Категория',
+        help_text='Укажите категорию для публикации.'
+    )
+    # category = models.ForeignKey(Category, on_delete=models.SET_NULL,
+    #                             null=True, blank=False,
+    #                             related_name='post', verbose_name='Категория',
+    #                             help_text='Укажите категорию для публикации.')
 
     location = models.ForeignKey(
         Location, on_delete=models.SET_NULL, null=True, blank=True,
